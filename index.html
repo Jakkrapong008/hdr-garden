@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบบูรณาการงานสวนพฤกษศาสตร์โรงเรียน</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+        }
+        /* Custom styles for prose-like content in results */
+        .prose-purple p {
+            margin-bottom: 1em;
+        }
+        .prose-purple strong {
+            font-weight: 700;
+            color: #6B21A8; /* Tailwind purple-800 */
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-purple-50 to-purple-100 p-4 sm:p-8 text-gray-800">
+    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6 sm:p-10">
+                <h1 class="text-2xl sm:text-3xl font-extrabold text-center text-purple-800 mb-4">
+            งานสวนพฤกษศาสตร์โรงเรียน 
+        </h1>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-center text-purple-800 mb-4">
+            โรงเรียนหางดงรัฐราษฎร์อุปถัมภ์
+        </h2>
+        <h3 class="text-3xl sm:text-4xl font-extrabold text-center text-purple-700 mb-6">
+            ระบบบูรณาการลำดับการเรียนรู้
+        </h3>
+        <p class="text-center text-lg text-gray-600 mb-8">
+            เครื่องมือช่วยในการค้นหาแนวทางการบูรณาการงานสวนพฤกษศาสตร์โรงเรียนเข้ากับการเรียนการสอน
+        </p>
+
+        <form id="integrationForm" class="space-y-6 mb-10">
+            <div>
+                <label for="gradeLevel" class="block text-lg font-medium text-gray-700 mb-2">
+                    ระดับชั้นที่สอน:
+                </label>
+                <select
+                    id="gradeLevel"
+                    class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 sm:text-base"
+                    required
+                >
+                    <option value="">เลือกระดับชั้น</option>
+                    <option value="ประถมศึกษาปีที่ 1">ประถมศึกษาปีที่ 1</option>
+                    <option value="ประถมศึกษาปีที่ 2">ประถมศึกษาปีที่ 2</option>
+                    <option value="ประถมศึกษาปีที่ 3">ประถมศึกษาปีที่ 3</option>
+                    <option value="ประถมศึกษาปีที่ 4">ประถมศึกษาปีที่ 4</option>
+                    <option value="ประถมศึกษาปีที่ 5">ประถมศึกษาปีที่ 5</option>
+                    <option value="ประถมศึกษาปีที่ 6">ประถมศึกษาปีที่ 6</option>
+                    <option value="มัธยมศึกษาปีที่ 1">มัธยมศึกษาปีที่ 1</option>
+                    <option value="มัธยมศึกษาปีที่ 2">มัธยมศึกษาปีที่ 2</option>
+                    <option value="มัธยมศึกษาปีที่ 3">มัธยมศึกษาปีที่ 3</option>
+                    <option value="มัธยมศึกษาปีที่ 4">มัธยมศึกษาปีที่ 4</option>
+                    <option value="มัธยมศึกษาปีที่ 5">มัธยมศึกษาปีที่ 5</option>
+                    <option value="มัธยมศึกษาปีที่ 6">มัธยมศึกษาปีที่ 6</option>
+                    <option value="ปวช.">ปวช.</option>
+                    <option value="ปวส.">ปวส.</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="subject" class="block text-lg font-medium text-gray-700 mb-2">
+                    วิชาที่สอน:
+                </label>
+                <select
+                    id="subject"
+                    class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 sm:text-base"
+                    required
+                >
+                    <option value="">เลือกวิชา</option>
+                    <option value="วิทยาศาสตร์">วิทยาศาสตร์</option>
+                    <option value="คณิตศาสตร์">คณิตศาสตร์</option>
+                    <option value="ภาษาไทย">ภาษาไทย</option>
+                    <option value="สังคมศึกษา">สังคมศึกษา</option>
+                    <option value="ศิลปะ">ศิลปะ</option>
+                    <option value="สุขศึกษาและพลศึกษา">สุขศึกษาและพลศึกษา</option>
+                    <option value="การงานอาชีพ">การงานอาชีพ</option>
+                    <option value="ภาษาต่างประเทศ">ภาษาต่างประเทศ</option>
+                    <option value="บูรณาการ">บูรณาการ</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="topic" class="block text-lg font-medium text-gray-700 mb-2">
+                    เรื่องที่สอน / หัวข้อที่ต้องการบูรณาการ:
+                </label>
+                <textarea
+                    id="topic"
+                    rows="4"
+                    class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 sm:text-base"
+                    placeholder="เช่น การเจริญเติบโตของพืช, ความสัมพันธ์ของสิ่งมีชีวิตในระบบนิเวศ, ประวัติชุมชนท้องถิ่น"
+                    required
+                ></textarea>
+            </div>
+
+            <p id="errorMessage" class="text-red-600 text-center text-sm hidden"></p>
+
+            <button
+                type="submit"
+                id="submitButton"
+                class="w-full flex justify-center py-3 px-6 border border-transparent rounded-md shadow-sm text-lg font-semibold text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition duration-300 ease-in-out transform hover:scale-105"
+            >
+                <span id="buttonText">ประมวลผลการบูรณาการ</span>
+                <svg id="loadingSpinner" class="animate-spin h-6 w-6 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+            </button>
+        </form>
+
+        <div id="resultsContainer" class="mt-10 hidden">
+            <h2 class="text-2xl sm:text-3xl font-bold text-purple-700 mb-6 text-center">
+                ผลการประมวลผลการบูรณาการ
+            </h2>
+            <p class="text-lg text-gray-700 mb-4">
+                <span class="font-semibold">ระดับชั้น:</span> <span id="displayGradeLevel"></span>
+            </p>
+            <p class="text-lg text-gray-700 mb-4">
+                <span class="font-semibold">วิชาที่สอน:</span> <span id="displaySubject"></span>
+            </p>
+            <p class="text-lg text-gray-700 mb-6">
+                <span class="font-semibold">เรื่องที่สอน:</span> <span id="displayTopic"></span>
+            </p>
+            <div id="resultsContent">
+                </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
